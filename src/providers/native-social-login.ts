@@ -64,7 +64,15 @@ export class NativeSocialLoginProvider implements ILoginService {
   }
   
   logout(): Promise<boolean> {
-    throw new Error("Method not implemented.");
+    return new Promise<boolean>((resolve, reject) => {
+      try {
+        this.googlePlus.logout();
+        this.fb.logout();
+        resolve(true);
+      } catch (error) {
+        resolve(true);
+      }
+    });
   }
 
   isLoggedIn(): Promise<boolean> {

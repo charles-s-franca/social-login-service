@@ -35,9 +35,7 @@ export class LoginModule {
     return {
       ngModule: LoginModule,
       providers: [
-        LoginService,
-        NativeSocialLoginProvider,
-        WebSocialLoginProvider
+        
       ]
     };
   }
